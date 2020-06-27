@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+
+<body>
+
+<div ng-app="" ng-init="a=0;b=0;c=0;d=0">
+
+<h1 >Order Summary</h1>
+
+<table>
+
+    <tr>
+    <td><p>Customer's Name :</p></td> 
+    <td><p><input type="text" ng-model="name" placeholder="Enter name here">	</p></td>
+    </tr>
+    
+	<tr>
+    <td><p>First Food Item price:</p></td>
+    <td><p><input type="number" ng-model="a"/></p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Second Food Item price:</p></td>
+    <td><p><input type="number" ng-model="b"/></p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Third Food Item price:</p></td>
+    <td><p><input type="number" ng-model="c"/></p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Total price:</p></td>
+    <td><p>{{ a+b+c }}</p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Add tip for waiter in % of total order value:</p></td>
+    <td><p><input type="number" ng-model="d"/></p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Tip for waiter</p></td>
+    <td><p>{{ ((a+b+c)*d/100) }}</p></td>
+    </tr>
+    
+    <tr>
+    <td><p>Total to be paid:</p></td>
+    <td><p>{{ a+b+c + ((a+b+c)*d/100) }}</p></td>
+    </tr>
+    
+</table> 
+
+<h1>Hello {{name}}! You have to pay INR {{ a+b+c + ((a+b+c)*d/100) }} </h1>
+
+</div>
+
+</body>
+</html>
